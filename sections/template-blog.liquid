@@ -34,8 +34,11 @@
                 {% endfor %}
             </div>
         </div>
-
-
+        
+        {%- comment -%} you can use a comma and pass an object to the snippet by setting a key, and the value being the object you want to reference {%- endcomment -%}
+        <div class="max-w-6xl mx-auto">
+            {% render 'pagination', pagination: paginate %}
+        </div>
     {% endpaginate %}
 
     {% schema %}
