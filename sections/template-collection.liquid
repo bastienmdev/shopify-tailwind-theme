@@ -6,7 +6,8 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {% for product in collection.products %}
                     
-                    {% render 'product-card', product_product: product, product_vendor: section.settings.show_vendor %}
+                    {% assign vendor = section.settings.show_vendor %}
+                    {% render 'product-card', product_product: product, product_vendor: vendor %}
                     
                 {% else %}
                     <p>There are no products inside of this collection</p>
