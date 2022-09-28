@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tailwind:watch": "npx tailwindcss -i ./src/tailwind.css -o ./assets/application.css --watch",
-    "shopify:login": "shopify login --store https://xtremedevs.myshopify.com",
+    "shopify:login": "shopify login",
     "shopify:start": "shopify theme serve",
     "shopify:update": "brew upgrade shopify-cli"
   },
