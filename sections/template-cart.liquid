@@ -21,7 +21,7 @@
                                 <td class="py-4 px-2 flex flex-col justify-center">
                                     <a href="{{ item.url }}">
                                         {% if item.image %}
-                                            <img src="{{ item.image | img_url: 'small' }}" alt="{{ item.title | escape }}" class="w-20 h-20 object-cover border">
+                                            <img src="{{ item.image | img_url: 'small' }}" alt="{{ item.title | escape }}" class="w-20 h-20 object-cover border" loading="lazy">
                                         {% else %}
                                             {{ 'product-1' | placeholder_svg_tag: 'w-20 h-20 object-cover border' }}
                                         {% endif %}
@@ -31,7 +31,7 @@
                                     <a href="{{ item.url }}" class="my-1">{{ item.product.title | truncate: 10 }}</a>
                                     <span class="text-sm text-gray-500 my-1">{{ item.variant.title }}</span>
                                     {% comment %} /cart/change?line=1&quantity=0  This query will set the quantity of the specified line item to 0 {% endcomment %}
-                                    <a href="{{routes.cart_change_url }}?line={{ forloop.index }}&quantity=0" class="text-sm font-meduim text-red-500 my-1">Remove</a>
+                                    <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0" class="text-sm font-meduim text-red-500 my-1">Remove</a>
                                 </td>
                                 <td class="py-4 px-2">
                                     <input id="updates_{{ forloop.index }}" type="number" name="updates[]" value="{{ item.quantity }}" min="1"class="w-20 border p-2">
